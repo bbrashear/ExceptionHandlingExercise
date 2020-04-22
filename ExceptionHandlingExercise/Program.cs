@@ -19,7 +19,7 @@ namespace ExceptionHandlingExercise
 
             // Create an string variable with an empty string initializer - name it str
 
-            string str = "";
+            string str = string.Empty;
 
             // using a foreach loop, attempt to parse the elements in your char[] with int.Parse()
             // and Exceptions will be thrown 
@@ -40,9 +40,10 @@ namespace ExceptionHandlingExercise
                     int x = int.Parse(str);
                     numbers.Add(x);
                 }
-                catch
+                catch (Exception ex)
                 {
                     Console.WriteLine($"Unable to Parse '{character}'");
+                    Console.WriteLine(ex.Message);
                 }
             }
 
